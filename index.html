@@ -5,14 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Devs2Gather</title>
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Orbitron:400,500,700" rel="stylesheet" />
     <style>
       html {
         scroll-behavior: smooth;
       }
+
+      img.loaded {
+        opacity: 1;
+        transition: opacity 1.5s;
+      }
+
+      img {
+        opacity: 0;
+      }
     </style>
   </head>
   <body>
-    <nav id="header" class="fixed w-full top-0 z-30">
+    <nav id="header" class="fixed w-full top-0 z-30 bg-white">
       <div class="w-full container mx-auto flex flex-no-wrap items-center justify-between mt-0 py-2">
         <div class="pl-4 flex items-center">
           <a class="text-orange-500 no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="#top">
@@ -45,8 +55,9 @@
       <hr class="border-b border-gray-200 opacity-50 my-0 py-0" />
     </nav>
     <!--Hero-->
-    <div class="container px-3 pt-16 mx-auto flex flex-wrap flex-col md:flex-row items-center">
-        <div class="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left">
+    <div class="container px-3 pt-16 mx-auto flex flex-wrap flex-col md:flex-row lg:h-[600px] xl:h-[700px] items-center">
+      <div class="w-full md:w-2/5 items-center flex">
+        <div class="flex flex-col justify-center items-start text-center md:text-left">
           <p class="uppercase tracking-loose w-full">Interested in Coding?</p>
           <h1 class="w-full my-4 text-5xl font-bold leading-tight">
             Devs2Gather
@@ -58,12 +69,52 @@
             Join Now
           </button>
         </div>
-        <div class="w-full md:w-3/5 py-6 text-center">
-          <img class="ml-auto md:w-4/5" src="./assets/img/hero.png" />
-        </div>
+      </div>
+      <div class="w-full md:w-3/5 h-full py-6 text-center">
+        <img class="ml-auto md:w-4/5 lg:h-full lg:w-auto" loading="lazy" src="/assets/img/hero.png" />
       </div>
     </div>
+    
+    
+    <section class="relative bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops)),url('/assets/img/grain-dark.png')] bg-blend-overlay from-[#0d1d31] to-[#0c0d13] overflow-hidden uppercase">
+      <div class="relative z-10">
+        <div class="container mx-auto px-6 py-20 font-mono">
+          <div class="text-cyan-500">
+            <h1 class="text-5xl font-bold pb-4">Events</h1>
+            <div class="w-60 h-2 bg-cyan-500 mb-6" style="clip-path: polygon(5px 0px, 100% 0px, 100% 40%, calc(100% - 5px) 100%, 0px 100%, 0px 60%);"></div>
+          </div>
+          <div class="md:flex md:justify-between md:items-center text-center mb-4">
+            <div class="w-full mb-8">
+              <p class="text-cyan-500 mb-6">Devs2Gather Presents</p>
+              <h1 class="text-6xl font-semibold text-white mb-4 tracking-widest" style="font-family: Orbitron;">Open Source<br>Fest</h1>
+              <p class="text-gray-300 text-lg mb-6">Experience the Future of Technology</p>
+              <div class="flex flex-wrap max-w-3xl mx-auto">
+                <div class="flex w-full md:w-1/2 md:justify-center items-center">
+                  <svg class="h-5 w-5 text-gray-300 mr-4" fill="currentColor" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M152 24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H64C28.7 64 0 92.7 0 128v16 48V448c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V192 144 128c0-35.3-28.7-64-64-64H344V24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H152V24zM48 192H400V448c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V192z"/></svg>
+                  <p class="text-gray-300">August 17 - September 28</p>
+                </div>
+                <div class="flex w-full md:w-1/2 md:justify-center items-center">
+                  <svg class="h-5 w-5 text-gray-300 mr-4" fill="currentColor" viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>
+                  <p class="text-gray-300">Online</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="text-left text-gray-300">
+            <p class="pb-4">We are proud to present our first <b class="text-cyan-500">Open Source Fest</b>, join and make contributions to open source.</p>
+            <p>>> <span class="animate-pulse">registration opening soon</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <script type="module" src="/assets/js/main.js"></script>
+    <script>
+      [].forEach.call(document.querySelectorAll('img'), function(img) {
+        img.onload = function() {
+          img.classList.add('loaded');
+        };
+      });
+    </script>
   </body>
 </html>
