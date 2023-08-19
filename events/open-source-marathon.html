@@ -19,6 +19,18 @@
       img {
         opacity: 0;
       }
+
+      ul {
+        margin: 0;
+      }
+      ul.dashed {
+        list-style-type: none;
+      }
+      ul.dashed > li:before {
+        display: inline-block;
+        content: "-";
+        width: 1.5rem;
+      }
     </style>
   </head>
   <body>
@@ -49,10 +61,17 @@
           <div class="text-gray-300">
             <p class="pb-4">We are proud to present our first <b class="text-cyan-500">Open Source Fest</b>, join and make contributions to open source.</p>
             <p class="pb-4">>> <span class="animate-pulse">registration is open</span></p>
-            <hr class="m-4 border-cyan-500">
+            <div class="m-2 mb-16">
+              <div class="mb-2 flex gap-1 h-1 w-1/5">
+                <div class="h-full w-1/4 bg-white"></div>
+                <div class="h-full w-1/4 bg-white"></div>
+                <div class="h-full w-2/4 bg-white"></div>
+              </div>
+              <hr class="border-cyan-500">  
+            </div>
             <h2 class="text-3xl font-semibold pb-4 text-cyan-500 tracking-widest" style="font-family: Orbitron;">Overview</h2>
             <div class="w-40 h-2 bg-cyan-500 mb-6" style="clip-path: polygon(5px 0px, 100% 0px, 100% 40%, calc(100% - 5px) 100%, 0px 100%, 0px 60%);"></div>
-            <p class="pb-4 text-gray-300">6-weeks event where students contribute to open-source projects starting on 19 August. Where we will provide trainings on Git, how to collaborate on GitHub, finding a suitable open source project and contribute to them. Certificates will be awarded on completing the program. Enhance your skills and advance your career with this invaluable opportunity!</p>
+            <p class="pb-4">6-weeks event where students contribute to open-source projects starting on 19 August. Where we will provide trainings on Git, how to collaborate on GitHub, finding a suitable open source project and contribute to them. Certificates will be awarded on completing the program. Enhance your skills and advance your career with this invaluable opportunity!</p>
             <br class="my-10">
             <h2 class="text-3xl font-semibold pb-4 text-cyan-500 tracking-widest" style="font-family: Orbitron;">Timeline</h2>
             <div class="w-40 h-2 bg-cyan-500 mb-6" style="clip-path: polygon(5px 0px, 100% 0px, 100% 40%, calc(100% - 5px) 100%, 0px 100%, 0px 60%);"></div>
@@ -161,12 +180,129 @@
             <br class="my-10">
             <h2 class="text-3xl font-semibold pb-4 text-cyan-500 tracking-widest" style="font-family: Orbitron;">What you will gain?</h2>
             <div class="w-40 h-2 bg-cyan-500 mb-6" style="clip-path: polygon(5px 0px, 100% 0px, 100% 40%, calc(100% - 5px) 100%, 0px 100%, 0px 60%);"></div>
-            <ol class="pl-8 list-decimal">
+            <ol class="pb-4 pl-8 list-decimal">
                 <li>Learn valuable coding and collaboration skills.</li>
                 <li>Be part of a community that values diversity, creativity, and innovation.</li>
                 <li>Build a strong portfolio showcasing open source contributions.</li>
                 <li>Foster networking and personal growth while making a meaningful impact.</li>
             </ol>
+        </div>
+        <div class="m-2 mb-16">
+          <div class="mb-2 flex gap-1 h-1 w-1/5">
+            <div class="h-full w-1/4 bg-white"></div>
+            <div class="h-full w-1/4 bg-white"></div>
+            <div class="h-full w-2/4 bg-white"></div>
+          </div>
+          <hr class="border-cyan-500">  
+        </div>
+        <div class="text-gray-300">
+          <h1 class="text-4xl font-semibold pb-4 text-cyan-500 tracking-widest" style="font-family: Orbitron;">Participation</h1>
+          <div class="w-40 h-2 bg-cyan-500 mb-6" style="clip-path: polygon(5px 0px, 100% 0px, 100% 40%, calc(100% - 5px) 100%, 0px 100%, 0px 60%);"></div>
+          <p class="pb-4">Participating in this marathon leads to personal growth, professional opportunities, and community building. But it all begins with meaningful contributions to open-source software.</p>
+          <br class="my-10">
+          <h2 class="text-3xl font-semibold pb-6 text-cyan-500 tracking-widest" style="font-family: Orbitron;">Contributors</h2>
+          <p class="pb-4 text-xl font-semibold">Here's what you need to know to participate and complete this marathon</p>
+          <ul class="pb-4 dashed normal-case text-gray-400">
+            <li class="list-item">Register anytime between this program timeline, 19 August - 30 September</li>
+            <li class="list-item">Pull request can be made in any <a class="text-cyan-500 uppercase font-semibold hover:text-cyan-400" href="https://github.com">GitHub</a> hosted open source project</li>
+            <li class="list-item">Project maintainers must accept your pull/merge requests for them to count toward your total</li>
+            <li class="list-item">Have 3 pull/merge requests accepted between program timeline to complete this event</li>
+          </ul>
+          <br class="my-10">
+          <h2 class="text-3xl font-semibold pb-6 text-cyan-500 tracking-widest" style="font-family: Orbitron;">Resources</h2>
+          <p class="pb-4 text-xl font-semibold">Intro to open source</p>
+          <ul class="pb-8 dashed normal-case text-gray-400">
+            <li><a class="text-cyan-500 uppercase font-semibold hover:text-cyan-400" href="https://opensource.guide/how-to-contribute/">How to contribute to open source</a></li>
+            <li><a class="text-cyan-500 uppercase font-semibold hover:text-cyan-400" href="https://training.github.com">GitHub training kit</a></li>
+            <li><a class="text-cyan-500 uppercase font-semibold hover:text-cyan-400" href="https://guides.github.com/introduction/flow/">Understanding the GitHub Flow</a></li>
+            <li><a class="text-cyan-500 uppercase font-semibold hover:text-cyan-400" href="https://opensource.com/article/19/5/how-get-job-doing-open-source">How open source contributions can boost your career</a></li>
+          </ul>
+          <p class="pb-4 text-xl font-semibold">Start contributing</p>
+          <ul class="pb-8 dashed normal-case text-gray-400">
+            <li>Explore projects with issues: <a class="text-cyan-500 uppercase font-semibold hover:text-cyan-400" href="https://up-for-grabs.net/#/">up-for-grabs.net</a></li>
+            <li>Explore projects with issues: <a class="text-cyan-500 uppercase font-semibold hover:text-cyan-400" href="https://goodfirstissue.dev/">goodfirstissue.dev</a></li>
+            <li>GitHub Repository: <a class="text-cyan-500 uppercase font-semibold hover:text-cyan-400" href="https://github.com/firstcontributions/first-contributions">First-Contributions</a></li>
+            <li>GitHub Repository: <a class="text-cyan-500 uppercase font-semibold hover:text-cyan-400" href="https://github.com/mungell/awesome-for-beginners">Awesome-for-Beginners</a></li>
+          </ul>
+        </div>
+        <div class="m-2 mb-16">
+          <div class="mb-2 flex gap-1 h-1 w-1/5">
+            <div class="h-full w-1/4 bg-white"></div>
+            <div class="h-full w-1/4 bg-white"></div>
+            <div class="h-full w-2/4 bg-white"></div>
+          </div>
+          <hr class="border-cyan-500">  
+        </div>
+        <div class="text-gray-400 md:text-center">
+          <h2 class="text-3xl font-semibold pb-6 text-cyan-500 tracking-widest" style="font-family: Orbitron;">FAQ</h2>
+          <p class="pb-4 text-xl font-semibold">Frequently asked questions</p>
+
+          <div class="mx-auto md:w-[600px] lg:w-[1000px] text-start">
+            <div>
+              <div class="accordion-header cursor-pointer transition flex space-x-5 items-center h-10">
+                [<span class="fas">&#43;</span>]
+                <h2 class="hover:text-gray-300 font-semibold">We have exams in mid of the program can we participate after exams?</h2>
+              </div>
+              <div class="accordion-content px-5 pt-0 overflow-hidden max-h-0 space-y-4 mr-4 text-sm">
+                <div class="flex flex-row ml-8 py-4">
+                  <div class="flex w-1 bg-gradient-to-t from-sky-600 to-sky-500"></div>
+                  <div class="flex-1 p-3">
+                    <p class="pl-2 sm:pl-4 text-justify normal-case">
+                      Yes, you can register anytime between the program timeline and start contributing.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="accordion-header cursor-pointer transition flex space-x-5 items-center h-10">
+                [<span class="fas">&#43;</span>]
+                <h2 class="hover:text-gray-300 font-semibold">What is this workshop about?</h2>
+              </div>
+              <div class="accordion-content px-5 pt-0 overflow-hidden max-h-0 space-y-4 mr-4 text-sm">
+                <div class="flex flex-row ml-8 py-4">
+                  <div class="flex w-1 bg-gradient-to-t from-sky-600 to-sky-500"></div>
+                  <div class="flex-1 p-3">
+                    <p class="pl-2 sm:pl-4 text-justify normal-case">
+                      This is not a workshop but a 6 weeks long event where you have to contribute to open-source projects. We will teach you how to contribute, and you will have to choose projects and contribute to them.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="accordion-header cursor-pointer transition flex space-x-5 items-center h-10">
+                [<span class="fas">&#43;</span>]
+                <h2 class="hover:text-gray-300 font-semibold">What are the training topic and timings?</h2>
+              </div>
+              <div class="accordion-content px-5 pt-0 overflow-hidden max-h-0 space-y-4 mr-4 text-sm">
+                <div class="flex flex-row ml-8 py-4">
+                  <div class="flex w-1 bg-gradient-to-t from-sky-600 to-sky-500"></div>
+                  <div class="flex-1 p-3">
+                    <p class="pl-2 sm:pl-4 text-justify normal-case">
+                      We will provide taining on topics like Git, GitHub, contribution workflows, etc. We will publish the training schedule soon.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="accordion-header cursor-pointer transition flex space-x-5 items-center h-10">
+                [<span class="fas">&#43;</span>]
+                <h2 class="hover:text-gray-300 font-semibold">I don't have much programming knowledge, can I participate in this event?</h2>
+              </div>
+              <div class="accordion-content px-5 pt-0 overflow-hidden max-h-0 space-y-4 mr-4 text-sm">
+                <div class="flex flex-row ml-8 py-4">
+                  <div class="flex w-1 bg-gradient-to-t from-sky-600 to-sky-500"></div>
+                  <div class="flex-1 p-3">
+                    <p class="pl-2 sm:pl-4 text-justify normal-case">
+                      Open-source contribution is not only about code contributions, you still have lots of ways to contribute to open-source projects. You can contribute to documentation, translation, design, etc. So, yes you can participate in this event.
+                    </p>  
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -177,6 +313,21 @@
         img.onload = function() {
           img.classList.add('loaded');
         };
+      });
+      const accordionHeader = document.querySelectorAll(".accordion-header");
+      accordionHeader.forEach((header) => {
+        header.addEventListener("click", function () {
+          const accordionContent = header.parentElement.querySelector(".accordion-content");
+          let accordionMaxHeight = accordionContent.style.maxHeight;
+
+          if (accordionMaxHeight == "0px" || accordionMaxHeight.length == 0) {
+            accordionContent.style.maxHeight = `${accordionContent.scrollHeight + 32}px`;
+            header.querySelector(".fas").innerHTML = "&#8722;";
+          } else {
+            accordionContent.style.maxHeight = `0px`;
+            header.querySelector(".fas").innerHTML = "&#43;";
+          }
+        });
       });
     </script>
   </body>
