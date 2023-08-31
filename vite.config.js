@@ -7,7 +7,8 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
-        nested: resolve(__dirname, 'events/open-source-marathon.html'),
+        osm: resolve(__dirname, 'events/open-source-marathon/index.html'),
+        osmLeaderboard: resolve(__dirname, 'events/open-source-marathon/leaderboard.html'),
       },
     },
   },

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Open Source Marathon</title>
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Orbitron:400,500,700" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/sortable.min.css" />
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    img.loaded {
+      opacity: 1;
+      transition: opacity 1.5s;
+    }
+
+    img {
+      opacity: 0;
+    }
+
+    tr>td {
+      padding: 0.75rem 1rem;
+    }
+
+    table td:nth-child(1) {
+      text-align: right;
+    }
+
+    table td:nth-child(4) {
+      text-align: center;
+    }
+
+    table td:nth-child(5) {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="relative bg-[url('/assets/img/grain-dark.png')] bg-[#0c0d13] overflow-hidden">
+    <div class="relative z-10">
+      <div class="container mx-auto px-6 py-20 font-mono uppercase">
+        <div class="md:flex md:justify-between md:items-center text-center">
+          <div class="w-full mb-8">
+            <h1 class="text-6xl font-semibold text-white mb-4 tracking-widest" style="font-family: Orbitron;">Open
+              Source</h1>
+            <h3 class="text-cyan-500 text-3xl font-semibold mb-4 tracking-widest">Marathon</h3>
+          </div>
+        </div>
+        <div class="text-gray-300">
+          <h2 class="text-4xl font-bold pb-4 text-cyan-500 tracking-widest" style="font-family: Orbitron;">Leaderboard
+          </h2>
+          <div class="w-60 h-2 bg-cyan-500 mb-6"
+            style="clip-path: polygon(5px 0px, 100% 0px, 100% 40%, calc(100% - 5px) 100%, 0px 100%, 0px 60%);"></div>
+          <div class="relative overflow-x-auto">
+            <table id="leaderboard" class="w-full text-sm text-center md:text-left lg:table-fixed sortable">
+              <thead>
+                <tr class="text-cyan-500 bg-gray-800 bg-opacity-50 uppercase">
+                  <th rowspan="2" scope="col" class="px-4 py-3 w-1/12 hover:bg-gray-800 rounded-l-lg">
+                    Rank
+                  </th>
+                  <th rowspan="2" scope="col" class="px-4 py-3 w-1/6 hover:bg-gray-800">
+                    GitHub username
+                  </th>
+                  <th rowspan="2" scope="col" class="px-4 py-3 w-1/3 hover:bg-gray-800">
+                    Name
+                  </th>
+                  <th colspan="2" scope="col" class="px-6 py-3 w-1/3 text-center no-sort">
+                    Pull Requests
+                  </th>
+                  <th rowspan="2" scope="col" class="px-4 py-3 w-1/12 no-sort rounded-r-lg"></th>
+                </tr>
+                <tr class="text-cyan-500 bg-gray-800 bg-opacity-50 uppercase">
+                  <th scope="col" class="px-4 py-3 w-1/12 hover:bg-gray-800 text-center" data-sort-col="3">
+                    Total
+                  </th>
+                  <th scope="col" class="px-4 py-3 w-1/12 hover:bg-gray-800 text-center" data-sort-col="4">
+                    Merged
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script type="module" src="/assets/js/main.js"></script>
+  <script type="module" src="/assets/js/sortable.min.js"></script>
+  <script>
+    const leaderboardUrl = "https://raw.githubusercontent.com/devs2gather/marathon/main/leaderboard/leaderboard.json";
+    fetch(leaderboardUrl).then((response) => {
+      return response.json();
+    }).then((data) => {
+      let table = document.getElementById("leaderboard").getElementsByTagName("tbody")[0];
+
+      let leaderboard = Object.entries(data.leaderboard);
+      leaderboard.sort((a, b) => {
+        return b[1].merged - a[1].merged;
+      });
+
+      for (let i = 0; i < leaderboard.length; i++) {
+        let row = table.insertRow(-1);
+        row.insertCell(0).innerHTML = i + 1;
+        row.insertCell(1).innerHTML = leaderboard[i][0];
+        row.insertCell(2).innerHTML = leaderboard[i][1].name;
+        row.insertCell(3).innerHTML = leaderboard[i][1].total;
+        row.insertCell(4).innerHTML = leaderboard[i][1].merged;
+      }
+    });
+  </script>
+</body>
+
+</html>
