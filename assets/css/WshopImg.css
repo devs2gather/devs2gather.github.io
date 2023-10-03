@@ -1,6 +1,6 @@
 .slider{
     width: 800px;
-    height: 500px;
+  
     border-radius: 10px;
     overflow: hidden;
     margin: auto;
@@ -8,7 +8,7 @@
   
   .slides{
     width: 500%;
-    height: 500px;
+    
     display: flex;
   }
   
@@ -23,7 +23,7 @@
   
   .slide img{
     width: 800px;
-    height: 500px;
+    
   }
   
   /*css for manual slide navigation*/
@@ -75,7 +75,7 @@
     display: flex;
     width: 800px;
     justify-content: center;
-    margin-top: 460px;
+    margin-top: 560px;
   }
   
   .navigation-auto div{
@@ -108,19 +108,19 @@
   @media only screen and (max-width: 940px) {
     .navigation-auto{
       width: 69%;
-      margin-top:225px;
+      margin-top:665px;
     }
     .navigation-manual{
       width: 69%;
-      margin-top: -275px;
+      margin-top: -35px;
     }
     .slider{
       width: 80%;
-      height: 255px;
+     
       
     }
     .slide img{
-      height: 255px;
+      
     }
     
   }
