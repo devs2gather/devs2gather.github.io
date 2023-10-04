@@ -280,27 +280,27 @@
             <div style="font-family: Orbitron;" class="text-gray-300 text-xl font-semibold tracking-widest stats-number">
             <div class="row row1">
               <div class="first total-prs">
-                <h2 class="text-3xl">77</h2>
+                <h2 id="total" class="text-3xl">fetching...</h2>
                 <h3 class="mb-12">Total PR merged</h3>
               </div>
               <div class="second merged-prs">
-                <h2 class="text-3xl">56</h2>
+                <h2 id="merge" class="text-3xl">fetching..</h2>
                 <h3 class="mb-12">Merged Prs</h3>
               </div>
             </div>
             <div class="row row2">
               <div class="first total-reg">
-                <h2 class="text-3xl">110</h2>
+                <h2 id="total-reg" class="text-3xl">fetching...</h2>
                 <h3 class="mb-12">Total Registrations</h3>
               </div>
               <div class="second  active-participants">
-                <h2 class="text-3xl">30</h2>
-                <h3 class="mb-12" >Active Participants</h3>
+                <h2 id="a-participants" class="text-3xl">fetching...</h2>
+                <h3  class="mb-12" >Active Participants</h3>
               </div>
             </div>
             <div class="row row3">
               <div class="first successors">
-                <h2 class="text-3xl">8</h2>
+                <h2 id="completions" class="text-3xl">fetching...</h2>
                 <h3 >Completions</h3>
               </div>
             </div>
@@ -566,6 +566,44 @@
           }
         });
       });
+    </script>
+
+    
+    <script>
+      //script for stas API 
+
+      let total = document.getElementById("total");
+      let merge = document.getElementById("merge");
+      let total_reg = document.getElementById("total-reg");
+      let a_participants = document.getElementById("a-participants");
+      let completions = document.getElementById("completions");
+
+
+      const statsUrl = "https://raw.githubusercontent.com/devs2gather/marathon/main/leaderboard/stats.json"
+      fetch(statsUrl)
+  .then(response => {
+    
+    if (!response.ok) {
+      throw new Error("Failed to fetch data from the API.");
+    }
+    
+    return response.json();
+  })
+  .then(data => {
+    
+    console.log(data);
+    total.innerHTML = data.total;
+    merge.innerHTML = data.merged;
+    completions.innerHTML = data.completed;
+    total_reg.innerHTML = "110+";
+    a_participants.innerHTML = data.users;
+
+  })
+  .catch(error => {
+    console.error(error);
+  });
+
+
     </script>
     
   </body>
