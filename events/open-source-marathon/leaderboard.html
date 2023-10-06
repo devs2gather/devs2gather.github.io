@@ -1,193 +1,213 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Open Source Marathon</title>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Orbitron:400,500,700" rel="stylesheet" />
+    <link rel="stylesheet" href="/assets/css/sortable.min.css" />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Open Source Marathon</title>
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css?family=Orbitron:400,500,700" rel="stylesheet" />
-  <link rel="stylesheet" href="/assets/css/sortable.min.css" />
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
+      img.loaded {
+        opacity: 1;
+        transition: opacity 1.5s;
+      }
 
-    img.loaded {
-      opacity: 1;
-      transition: opacity 1.5s;
-    }
+      img {
+        opacity: 0;
+      }
 
-    img {
-      opacity: 0;
-    }
+      tr > td {
+        padding: 0.75rem 1rem;
+      }
 
-    tr>td {
-      padding: 0.75rem 1rem;
-    }
+      table td {
+        text-align: center;
+      }
 
-    table td {
-      text-align: center;
-    }
+      table td:nth-child(1) {
+        text-align: right;
+      }
 
-    table td:nth-child(1) {
-      text-align: right;
-    }
+      table td:nth-child(2) {
+        text-align: inherit;
+      }
 
-    table td:nth-child(2) {
-      text-align: inherit;
-    }
+      table td:nth-child(3) {
+        text-align: inherit;
+      }
+    </style>
+  </head>
 
-    table td:nth-child(3) {
-      text-align: inherit;
-    }
-  </style>
-</head>
-
-<body>
-  <section class="relative bg-[url('/assets/img/grain-dark.png')] bg-[#0c0d13] overflow-hidden">
-    <div class="relative z-10">
-      <div class="container mx-auto px-6 py-20 font-mono uppercase">
-        <div class="md:flex md:justify-between md:items-center text-center">
-          <div class="w-full mb-8">
-            <h1 class="text-6xl font-semibold text-white mb-4 tracking-widest" style="font-family: Orbitron;">Open
-              Source</h1>
-            <h3 class="text-cyan-500 text-3xl font-semibold mb-4 tracking-widest">Marathon</h3>
+  <body>
+    <section class="relative bg-[url('/assets/img/grain-dark.png')] bg-[#0c0d13] overflow-hidden">
+      <div class="relative z-10">
+        <div class="container mx-auto px-6 py-20 font-mono uppercase">
+          <div class="md:flex md:justify-between md:items-center text-center">
+            <div class="w-full mb-8">
+              <h1 class="text-6xl font-semibold text-white mb-4 tracking-widest" style="font-family: Orbitron">
+                Open Source
+              </h1>
+              <h3 class="text-cyan-500 text-3xl font-semibold mb-4 tracking-widest">Marathon</h3>
+            </div>
           </div>
-        </div>
-        <div class="text-gray-300">
-          <h2 class="text-3xl md:text-4xl font-bold pb-4 text-cyan-500 tracking-widest" style="font-family: Orbitron;">Leaderboard
-          </h2>
-          <div class="w-40 md:w-60 h-2 bg-cyan-500 mb-6"
-            style="clip-path: polygon(5px 0px, 100% 0px, 100% 40%, calc(100% - 5px) 100%, 0px 100%, 0px 60%);"></div>
-          <div class="relative overflow-x-auto">
-            <table id="leaderboard" class="w-full text-sm text-center md:text-left lg:table-fixed sortable">
-              <thead>
-                <tr class="text-cyan-500 bg-gray-800 bg-opacity-50 uppercase">
-                  <th rowspan="2" scope="col" class="px-4 py-3 w-1/12 hover:bg-gray-800 rounded-l-lg">
-                    Rank
-                  </th>
-                  <th rowspan="2" scope="col" class="px-4 py-3 w-1/6 hover:bg-gray-800">
-                    GitHub username
-                  </th>
-                  <th rowspan="2" scope="col" class="px-4 py-3 w-1/3 hover:bg-gray-800">
-                    Name
-                  </th>
-                  <th colspan="3" scope="col" class="px-6 py-3 w-1/3 text-center no-sort">
-                    Pull Requests
-                  </th>
-                  <th rowspan="2" scope="col" class="px-4 py-3 w-1/12 no-sort rounded-r-lg"></th>
-                </tr>
-                <tr class="text-cyan-500 bg-gray-800 bg-opacity-50 uppercase">
-                  <th scope="col" class="px-4 py-3 hover:bg-gray-800 text-center" data-sort-col="3">
-                    Total
-                  </th>
-                  <th scope="col" class="px-4 py-3 hover:bg-gray-800 text-center" data-sort-col="4">
-                    Open
-                  </th>
-                  <th scope="col" class="px-4 py-3 hover:bg-gray-800 text-center" data-sort-col="5">
-                    Merged
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-              </tbody>
-            </table>
-          </div>
-          <dialog id="logs" class="bg-inherit normal-case md:w-[800px]">
-            <div class="w-full bg-sky-900 p-1"
-            style="clip-path: polygon(20px 0px, 100% 0px, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0px 100%, 0px 20px);">
-              <div class="w-full relative px-4 text-gray-300 text-sm font-mono subpixel-antialiased bg-gray-800 pb-6 pt-4 leading-normal"
-              style="clip-path: polygon(20px 0px, 100% 0px, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0px 100%, 0px 20px);">
+          <div class="text-gray-300">
+            <h2 class="text-3xl md:text-4xl font-bold pb-4 text-cyan-500 tracking-widest" style="font-family: Orbitron">
+              Leaderboard
+            </h2>
+            <div
+              class="w-40 md:w-60 h-2 bg-cyan-500 mb-6"
+              style="clip-path: polygon(5px 0px, 100% 0px, 100% 40%, calc(100% - 5px) 100%, 0px 100%, 0px 60%)"
+            ></div>
+            <div class="relative overflow-x-auto">
+              <table id="leaderboard" class="w-full text-sm text-center md:text-left lg:table-fixed sortable">
+                <thead>
+                  <tr class="text-cyan-500 bg-gray-800 bg-opacity-50 uppercase">
+                    <th rowspan="2" scope="col" class="px-4 py-3 w-1/12 hover:bg-gray-800 rounded-l-lg">Rank</th>
+                    <th rowspan="2" scope="col" class="px-4 py-3 w-1/6 hover:bg-gray-800">GitHub username</th>
+                    <th rowspan="2" scope="col" class="px-4 py-3 w-1/3 hover:bg-gray-800">Name</th>
+                    <th colspan="3" scope="col" class="px-6 py-3 w-1/3 text-center no-sort">Pull Requests</th>
+                    <th rowspan="2" scope="col" class="px-4 py-3 w-1/12 no-sort rounded-r-lg"></th>
+                  </tr>
+                  <tr class="text-cyan-500 bg-gray-800 bg-opacity-50 uppercase">
+                    <th scope="col" class="px-4 py-3 hover:bg-gray-800 text-center" data-sort-col="3">Total</th>
+                    <th scope="col" class="px-4 py-3 hover:bg-gray-800 text-center" data-sort-col="4">Open</th>
+                    <th scope="col" class="px-4 py-3 hover:bg-gray-800 text-center" data-sort-col="5">Merged</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+            <dialog id="logs" class="bg-inherit normal-case md:w-[800px]">
+              <div
+                class="w-full bg-sky-900 p-1"
+                style="
+                  clip-path: polygon(
+                    20px 0px,
+                    100% 0px,
+                    100% calc(100% - 20px),
+                    calc(100% - 20px) 100%,
+                    0px 100%,
+                    0px 20px
+                  );
+                "
+              >
+                <div
+                  class="w-full relative px-4 text-gray-300 text-sm font-mono subpixel-antialiased bg-gray-800 pb-6 pt-4 leading-normal"
+                  style="
+                    clip-path: polygon(
+                      20px 0px,
+                      100% 0px,
+                      100% calc(100% - 20px),
+                      calc(100% - 20px) 100%,
+                      0px 100%,
+                      0px 20px
+                    );
+                  "
+                >
                   <div class="top mb-2 flex flex-row-reverse">
-                      <button class="group h-4 w-4 rounded-full bg-red-500 text-center hover:bg-red-700 outline-none" onclick="logs.close()">
-                        <span class="hidden group-hover:block">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 384 512"><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>
-                        </span>
-                      </button>
+                    <button
+                      class="group h-4 w-4 rounded-full bg-red-500 text-center hover:bg-red-700 outline-none"
+                      onclick="logs.close()"
+                    >
+                      <span class="hidden group-hover:block">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 384 512">
+                          <path
+                            d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+                          />
+                        </svg>
+                      </span>
+                    </button>
                   </div>
                   <div class="mt-4 flex flex-col overflow-y-scroll break-words max-h-80">
                     <p class="items-center pl-2">
                       <span class="text-green-600 font-bold">$ </span>
-                      marathon list prs <a id="username" class="text-sky-500 hover:underline hover:text-sky-400 hover:cursor-pointer"></a>
+                      marathon list prs
+                      <a id="username" class="text-sky-500 hover:underline hover:text-sky-400 hover:cursor-pointer"></a>
                     </p>
                     <p id="pulls" class="typing items-center pl-2"></p>
                   </div>
-              </div>  
-            </div>
-          </dialog>
+                </div>
+              </div>
+            </dialog>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <script type="module" src="/assets/js/main.js"></script>
-  <script type="module" src="/assets/js/sortable.min.js"></script>
-  <script>
-    const listSvg = `<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path d="M40 48C26.7 48 16 58.7 16 72v48c0 13.3 10.7 24 24 24H88c13.3 0 24-10.7 24-24V72c0-13.3-10.7-24-24-24H40zM192 64c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zM16 232v48c0 13.3 10.7 24 24 24H88c13.3 0 24-10.7 24-24V232c0-13.3-10.7-24-24-24H40c-13.3 0-24 10.7-24 24zM40 368c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24H88c13.3 0 24-10.7 24-24V392c0-13.3-10.7-24-24-24H40z"/></svg>`;
+    <script type="module" src="/assets/js/main.js"></script>
+    <script type="module" src="/assets/js/sortable.min.js"></script>
+    <script>
+      const listSvg = `<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path d="M40 48C26.7 48 16 58.7 16 72v48c0 13.3 10.7 24 24 24H88c13.3 0 24-10.7 24-24V72c0-13.3-10.7-24-24-24H40zM192 64c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zM16 232v48c0 13.3 10.7 24 24 24H88c13.3 0 24-10.7 24-24V232c0-13.3-10.7-24-24-24H40c-13.3 0-24 10.7-24 24zM40 368c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24H88c13.3 0 24-10.7 24-24V392c0-13.3-10.7-24-24-24H40z"/></svg>`;
 
-    const leaderboardUrl = "https://raw.githubusercontent.com/devs2gather/marathon/main/leaderboard/leaderboard.json";
-    let leaderboard = {};
+      const leaderboardUrl = "https://raw.githubusercontent.com/devs2gather/marathon/main/leaderboard/leaderboard.json";
+      let leaderboard = {};
 
-    const logs = document.getElementById("logs");
-    const username = document.getElementById("username");
-    const pulls = document.getElementById("pulls");
+      const logs = document.getElementById("logs");
+      const username = document.getElementById("username");
+      const pulls = document.getElementById("pulls");
 
-    const showModal = (user) => {
-      console.log(user);
-      logs.showModal();
-      username.innerHTML = user;
-      username.href = `https://github.com/${user}`;
+      const showModal = (user) => {
+        console.log(user);
+        logs.showModal();
+        username.innerHTML = user;
+        username.href = `https://github.com/${user}`;
 
-      let pullsHTML = "";
-      const prs = leaderboard[user].pullRequests;
+        let pullsHTML = "";
+        const prs = leaderboard[user].pullRequests;
 
-      for (let i = 0; i < prs.length; i++) {
-        let pr = prs[i];
+        for (let i = 0; i < prs.length; i++) {
+          let pr = prs[i];
 
-        const date = new Date(pr.createdAt).toDateString();
-        let state = pr.state
-        if (pr.isMerged) {
-          state = "merged";
-        };
+          const date = new Date(pr.createdAt).toDateString();
+          let state = pr.state;
+          if (pr.isMerged) {
+            state = "merged";
+          }
 
-        pullsHTML += `${date}\t<a href="${pr.url}" target="_blank" class="text-sky-500 hover:underline hover:text-sky-400 hover:cursor-pointer">${pr.ref}</a>\t(${state})\t${pr.title}<br>`;
-      }
+          pullsHTML += `${date}\t<a href="${pr.url}" target="_blank" class="text-sky-500 hover:underline hover:text-sky-400 hover:cursor-pointer">${pr.ref}</a>\t(${state})\t${pr.title}<br>`;
+        }
 
-      pulls.innerHTML = pullsHTML;
-    };
+        pulls.innerHTML = pullsHTML;
+      };
 
+      fetch(leaderboardUrl)
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          let table = document.getElementById("leaderboard").getElementsByTagName("tbody")[0];
 
-    fetch(leaderboardUrl).then((response) => {
-      return response.json();
-    }).then((data) => {
-      let table = document.getElementById("leaderboard").getElementsByTagName("tbody")[0];
+          leaderboard = data.leaderboard;
 
-      leaderboard = data.leaderboard;
+          let ranked = Object.entries(data.leaderboard);
+          ranked.sort((a, b) => {
+            return b[1].total - a[1].total;
+          });
+          ranked.sort((a, b) => {
+            return b[1].merged + b[1].open - (a[1].merged + a[1].open);
+          });
+          ranked.sort((a, b) => {
+            return b[1].merged - a[1].merged;
+          });
 
-      let ranked = Object.entries(data.leaderboard);
-      ranked.sort((a, b) => {
-        return b[1].total - a[1].total;
-      });
-      ranked.sort((a, b) => {
-        return (b[1].merged + b[1].open) - (a[1].merged + a[1].open);
-      });
-      ranked.sort((a, b) => {
-        return b[1].merged - a[1].merged;
-      });
-
-      for (let i = 0; i < ranked.length; i++) {
-        let row = table.insertRow(-1);
-        row.insertCell(0).innerHTML = i + 1;
-        row.insertCell(1).innerHTML = ranked[i][0];
-        row.insertCell(2).innerHTML = ranked[i][1].name;
-        row.insertCell(3).innerHTML = ranked[i][1].total;
-        row.insertCell(4).innerHTML = ranked[i][1].open;
-        row.insertCell(5).innerHTML = ranked[i][1].merged;
-        row.insertCell(6).innerHTML = `<a class="fill-sky-500 hover:underline hover:fill-sky-400 hover:cursor-pointer" onclick="showModal('${ranked[i][0]}')">${listSvg}</a>`;
-      }
-    });
-  </script>
-</body>
-
+          for (let i = 0; i < ranked.length; i++) {
+            let row = table.insertRow(-1);
+            row.insertCell(0).innerHTML = i + 1;
+            row.insertCell(1).innerHTML = ranked[i][0];
+            row.insertCell(2).innerHTML = ranked[i][1].name;
+            row.insertCell(3).innerHTML = ranked[i][1].total;
+            row.insertCell(4).innerHTML = ranked[i][1].open;
+            row.insertCell(5).innerHTML = ranked[i][1].merged;
+            row.insertCell(
+              6,
+            ).innerHTML = `<a class="fill-sky-500 hover:underline hover:fill-sky-400 hover:cursor-pointer" onclick="showModal('${ranked[i][0]}')">${listSvg}</a>`;
+          }
+        });
+    </script>
+  </body>
 </html>

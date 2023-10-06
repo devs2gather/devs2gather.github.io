@@ -1,3 +1,11 @@
 module.exports = {
-  printWidth: 120,
+  printWidth: 80,
+  overrides: [
+    {
+      files: ["**/*.html"],
+      options: {
+        printWidth: 120,
+      },
+    },
+  ],
 };

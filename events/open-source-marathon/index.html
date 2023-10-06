@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -6,7 +6,6 @@
     <title>Open Source Marathon</title>
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Orbitron:400,500,700" rel="stylesheet" />
-    <link rel="stylesheet" href="/assets/css/stats.css">
     <style>
       html {
         scroll-behavior: smooth;
@@ -32,215 +31,252 @@
         content: "-";
         width: 1.5rem;
       }
-/*styles of glitch effect*/
+      /*styles of glitch effect*/
       .glitch-wrapper {
-   width: 100%;
-   height: 100%;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   text-align: center;
-  
-}
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
 
-.glitch {
-   position: relative;
-   font-size: 3.75rem;
-   font-weight: bold;
-   color: #FFFFFF;
-   letter-spacing: 3px;
-   z-index: 1;
-}
+      .glitch {
+        position: relative;
+        font-size: 3.75rem;
+        font-weight: bold;
+        color: #ffffff;
+        letter-spacing: 3px;
+        z-index: 1;
+      }
 
-.glitch:before {
-   content: attr(data-text);
-   position: absolute;
-   top: 0;
-   left: -2px;
-   width: 100%;
-   color: #fff;
-   
-   overflow: hidden;
-   clip: rect(0, 900px, 0, 0);
-   animation: noise-before 2.5s infinite linear alternate-reverse;
-}
+      .glitch:before {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: -2px;
+        width: 100%;
+        color: #fff;
 
-.glitch:after {
-   content: attr(data-text);
-   position: absolute;
-   top: 0;
-   left: 2px;
-   width: 100%;
-   color: #fff;
-   
-   overflow: hidden;
-   clip: rect(0, 900px, 0, 0);
-   animation: noise-after 1.5s infinite linear alternate-reverse;
-}
+        overflow: hidden;
+        clip: rect(0, 900px, 0, 0);
+        animation: noise-before 2.5s infinite linear alternate-reverse;
+      }
 
-@keyframes noise-before {
-   0% {
-      clip: rect(61px, 9999px, 52px, 0);
-   }
-   5% {
-      clip: rect(33px, 9999px, 144px, 0);
-   }
-   10% {
-      clip: rect(121px, 9999px, 115px, 0);
-   }
-   15% {
-      clip: rect(144px, 9999px, 162px, 0);
-   }
-   20% {
-      clip: rect(62px, 9999px, 180px, 0);
-   }
-   25% {
-      clip: rect(34px, 9999px, 42px, 0);
-   }
-   30% {
-      clip: rect(147px, 9999px, 179px, 0);
-   }
-   35% {
-      clip: rect(99px, 9999px, 63px, 0);
-   }
-   40% {
-      clip: rect(188px, 9999px, 122px, 0);
-   }
-   45% {
-      clip: rect(154px, 9999px, 14px, 0);
-   }
-   50% {
-      clip: rect(63px, 9999px, 37px, 0);
-   }
-   55% {
-      clip: rect(161px, 9999px, 147px, 0);
-   }
-   60% {
-      clip: rect(109px, 9999px, 175px, 0);
-   }
-   65% {
-      clip: rect(157px, 9999px, 88px, 0);
-   }
-   70% {
-      clip: rect(173px, 9999px, 131px, 0);
-   }
-   75% {
-      clip: rect(62px, 9999px, 70px, 0);
-   }
-   80% {
-      clip: rect(24px, 9999px, 153px, 0);
-   }
-   85% {
-      clip: rect(138px, 9999px, 40px, 0);
-   }
-   90% {
-      clip: rect(79px, 9999px, 136px, 0);
-   }
-   95% {
-      clip: rect(25px, 9999px, 34px, 0);
-   }
-   100% {
-      clip: rect(173px, 9999px, 166px, 0);
-   }
-}
+      .glitch:after {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 2px;
+        width: 100%;
+        color: #fff;
 
-@keyframes noise-after {
-   0% {
-      clip: rect(26px, 9999px, 33px, 0);
-   }
-   5% {
-      clip: rect(140px, 9999px, 198px, 0);
-   }
-   10% {
-      clip: rect(184px, 9999px, 89px, 0);
-   }
-   15% {
-      clip: rect(121px, 9999px, 6px, 0);
-   }
-   20% {
-      clip: rect(181px, 9999px, 99px, 0);
-   }
-   25% {
-      clip: rect(154px, 9999px, 133px, 0);
-   }
-   30% {
-      clip: rect(134px, 9999px, 169px, 0);
-   }
-   35% {
-      clip: rect(26px, 9999px, 187px, 0);
-   }
-   40% {
-      clip: rect(147px, 9999px, 137px, 0);
-   }
-   45% {
-      clip: rect(31px, 9999px, 52px, 0);
-   }
-   50% {
-      clip: rect(191px, 9999px, 109px, 0);
-   }
-   55% {
-      clip: rect(74px, 9999px, 54px, 0);
-   }
-   60% {
-      clip: rect(145px, 9999px, 75px, 0);
-   }
-   65% {
-      clip: rect(153px, 9999px, 198px, 0);
-   }
-   70% {
-      clip: rect(99px, 9999px, 136px, 0);
-   }
-   75% {
-      clip: rect(118px, 9999px, 192px, 0);
-   }
-   80% {
-      clip: rect(1px, 9999px, 83px, 0);
-   }
-   85% {
-      clip: rect(145px, 9999px, 98px, 0);
-   }
-   90% {
-      clip: rect(121px, 9999px, 154px, 0);
-   }
-   95% {
-      clip: rect(156px, 9999px, 44px, 0);
-   }
-   100% {
-      clip: rect(67px, 9999px, 122px, 0);
-   }
-}
+        overflow: hidden;
+        clip: rect(0, 900px, 0, 0);
+        animation: noise-after 1.5s infinite linear alternate-reverse;
+      }
+
+      @keyframes noise-before {
+        0% {
+          clip: rect(61px, 9999px, 52px, 0);
+        }
+        5% {
+          clip: rect(33px, 9999px, 144px, 0);
+        }
+        10% {
+          clip: rect(121px, 9999px, 115px, 0);
+        }
+        15% {
+          clip: rect(144px, 9999px, 162px, 0);
+        }
+        20% {
+          clip: rect(62px, 9999px, 180px, 0);
+        }
+        25% {
+          clip: rect(34px, 9999px, 42px, 0);
+        }
+        30% {
+          clip: rect(147px, 9999px, 179px, 0);
+        }
+        35% {
+          clip: rect(99px, 9999px, 63px, 0);
+        }
+        40% {
+          clip: rect(188px, 9999px, 122px, 0);
+        }
+        45% {
+          clip: rect(154px, 9999px, 14px, 0);
+        }
+        50% {
+          clip: rect(63px, 9999px, 37px, 0);
+        }
+        55% {
+          clip: rect(161px, 9999px, 147px, 0);
+        }
+        60% {
+          clip: rect(109px, 9999px, 175px, 0);
+        }
+        65% {
+          clip: rect(157px, 9999px, 88px, 0);
+        }
+        70% {
+          clip: rect(173px, 9999px, 131px, 0);
+        }
+        75% {
+          clip: rect(62px, 9999px, 70px, 0);
+        }
+        80% {
+          clip: rect(24px, 9999px, 153px, 0);
+        }
+        85% {
+          clip: rect(138px, 9999px, 40px, 0);
+        }
+        90% {
+          clip: rect(79px, 9999px, 136px, 0);
+        }
+        95% {
+          clip: rect(25px, 9999px, 34px, 0);
+        }
+        100% {
+          clip: rect(173px, 9999px, 166px, 0);
+        }
+      }
+
+      @keyframes noise-after {
+        0% {
+          clip: rect(26px, 9999px, 33px, 0);
+        }
+        5% {
+          clip: rect(140px, 9999px, 198px, 0);
+        }
+        10% {
+          clip: rect(184px, 9999px, 89px, 0);
+        }
+        15% {
+          clip: rect(121px, 9999px, 6px, 0);
+        }
+        20% {
+          clip: rect(181px, 9999px, 99px, 0);
+        }
+        25% {
+          clip: rect(154px, 9999px, 133px, 0);
+        }
+        30% {
+          clip: rect(134px, 9999px, 169px, 0);
+        }
+        35% {
+          clip: rect(26px, 9999px, 187px, 0);
+        }
+        40% {
+          clip: rect(147px, 9999px, 137px, 0);
+        }
+        45% {
+          clip: rect(31px, 9999px, 52px, 0);
+        }
+        50% {
+          clip: rect(191px, 9999px, 109px, 0);
+        }
+        55% {
+          clip: rect(74px, 9999px, 54px, 0);
+        }
+        60% {
+          clip: rect(145px, 9999px, 75px, 0);
+        }
+        65% {
+          clip: rect(153px, 9999px, 198px, 0);
+        }
+        70% {
+          clip: rect(99px, 9999px, 136px, 0);
+        }
+        75% {
+          clip: rect(118px, 9999px, 192px, 0);
+        }
+        80% {
+          clip: rect(1px, 9999px, 83px, 0);
+        }
+        85% {
+          clip: rect(145px, 9999px, 98px, 0);
+        }
+        90% {
+          clip: rect(121px, 9999px, 154px, 0);
+        }
+        95% {
+          clip: rect(156px, 9999px, 44px, 0);
+        }
+        100% {
+          clip: rect(67px, 9999px, 122px, 0);
+        }
+      }
     </style>
   </head>
   <body>
-    <section class="relative bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops)),url('/assets/img/grain-dark.png')] bg-blend-overlay from-[#0d1d31] to-[#0c0d13] overflow-hidden uppercase">
+    <section
+      class="relative bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops)),url('/assets/img/grain-dark.png')] bg-blend-overlay from-[#0d1d31] to-[#0c0d13] overflow-hidden uppercase"
+    >
       <div class="relative z-10">
         <div class="container mx-auto px-6 py-20 font-mono">
           <div class="md:flex md:justify-between md:items-center text-center">
             <div class="w-full mb-8">
               <p class="text-cyan-500 mb-6">Devs2Gather Presents</p>
-              <div class="glitch-wrapper"> 
-              <h1 data-text="Open Source" class="glitch text-6xl font-semibold text-white mb-4 tracking-widest" style="font-family: Orbitron;">Open Source</h1>
-              </div>  
+              <div class="glitch-wrapper">
+                <h1
+                  data-text="Open Source"
+                  class="glitch text-6xl font-semibold text-white mb-4 tracking-widest"
+                  style="font-family: Orbitron"
+                >
+                  Open Source
+                </h1>
+              </div>
               <h3 class="text-cyan-500 text-3xl font-semibold mb-4 tracking-widest">Marathon</h3>
               <p class="text-gray-300 text-lg mb-6">Kickstart your open source journey</p>
               <div class="flex flex-wrap max-w-3xl mx-auto">
                 <div class="flex w-full md:w-1/2 md:justify-center items-center">
-                  <svg class="h-5 w-5 text-gray-300 mr-4" fill="currentColor" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M152 24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H64C28.7 64 0 92.7 0 128v16 48V448c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V192 144 128c0-35.3-28.7-64-64-64H344V24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H152V24zM48 192H400V448c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V192z"/></svg>
+                  <svg
+                    class="h-5 w-5 text-gray-300 mr-4"
+                    fill="currentColor"
+                    viewBox="0 0 448 512"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M152 24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H64C28.7 64 0 92.7 0 128v16 48V448c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V192 144 128c0-35.3-28.7-64-64-64H344V24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H152V24zM48 192H400V448c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V192z"
+                    />
+                  </svg>
                   <p class="text-gray-300">August 19 - October 15</p>
                 </div>
                 <div class="flex w-full md:w-1/2 md:justify-center items-center">
-                  <svg class="h-5 w-5 text-gray-300 mr-4" fill="currentColor" viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>
+                  <svg
+                    class="h-5 w-5 text-gray-300 mr-4"
+                    fill="currentColor"
+                    viewBox="0 0 384 512"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"
+                    />
+                  </svg>
                   <p class="text-gray-300">Online</p>
                 </div>
               </div>
             </div>
           </div>
           <div class="text-left flex md:justify-center text-gray-300 mb-8">
-            <a class="inline-block px-6 p-2 m-1 mr-4 font-semibold tracking-wider border-2 border-gray-300 border-r-sky-600 border-b-sky-600 bg-gray-300 text-black hover:bg-gray-400 hover:border-sky-600 transition-colors ease-in-out" href="leaderboard">Leaderboard</a>
-            <a class="inline-block px-6 p-2 m-1 font-semibold tracking-wider border-2 border-gray-800 border-r-sky-500 border-b-sky-500 bg-gray-800 text-gray-300 hover:bg-neutral-900 hover:border-sky-500 transition-colors ease-in-out" target="_blank" href="https://forms.gle/UHyeKq8SYwrLckh79">Register Now</a>
+            <a
+              class="inline-block px-6 p-2 m-1 mr-4 font-semibold tracking-wider border-2 border-gray-300 border-r-sky-600 border-b-sky-600 bg-gray-300 text-black hover:bg-gray-400 hover:border-sky-600 transition-colors ease-in-out"
+              href="leaderboard"
+              >Leaderboard</a
+            >
+            <a
+              class="inline-block px-6 p-2 m-1 font-semibold tracking-wider border-2 border-gray-800 border-r-sky-500 border-b-sky-500 bg-gray-800 text-gray-300 hover:bg-neutral-900 hover:border-sky-500 transition-colors ease-in-out"
+              target="_blank"
+              href="https://forms.gle/UHyeKq8SYwrLckh79"
+              >Register Now</a
+            >
           </div>
           <div class="text-gray-300">
-            <p class="pb-4">We are proud to present our first <b class="text-cyan-500">Open Source Fest</b>, join and make contributions to open source.</p>
+            <p class="pb-4">
+              We are proud to present our first <b class="text-cyan-500">Open Source Fest</b>, join and make
+              contributions to open source.
+            </p>
             <p class="pb-4">>> <span class="animate-pulse">Program Extended ! </span></p>
           </div>
           <div class="m-2 mb-8">
@@ -249,292 +285,419 @@
               <div class="h-full w-1/4 bg-white"></div>
               <div class="h-full w-2/4 bg-white"></div>
             </div>
-            <hr class="border-cyan-500">  
+            <hr class="border-cyan-500" />
           </div>
           <div class="flex flex-col md:text-center md:items-center justify-center mb-8">
             <!--Start contributing-->
             <p class="text-xl font-bold text-cyan-500 mb-2">Start Contributing</p>
             <p class="text-gray-300 mb-2">Need help? Find a Good First Issue Using</p>
             <code class="text-sm sm:text-base text-left items-center bg-gray-800 text-white rounded-lg p-3 normal-case">
-              <span class="flex justify-between items-center gap-40">
+              <span class="flex justify-between items-center md:gap-40">
                 <span class="pl-2">
-                  <span>label:</span><span class="bg-sky-500 text-sky-400 bg-opacity-20 rounded p-1">"good first issue"</span>
-                  <span>is:</span><span class="bg-sky-500 text-sky-400 bg-opacity-20 rounded p-1">open</span>  
+                  <span>label:</span
+                  ><span class="bg-sky-500 text-sky-400 bg-opacity-20 rounded p-1">"good first issue"</span>
+                  <span>is:</span><span class="bg-sky-500 text-sky-400 bg-opacity-20 rounded p-1">open</span>
                 </span>
                 <span>
-                  <a target="_blank" href="https://github.com/search?q=label%3A%22good%20first%20issue%22%20is%3Aopen&type=issues" class="block rounded-lg p-2 bg-white hover:bg-opacity-10 bg-opacity-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" fill="currentColor" viewBox="0 0 512 512"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
+                  <a
+                    target="_blank"
+                    href="https://github.com/search?q=label%3A%22good%20first%20issue%22%20is%3Aopen&type=issues"
+                    class="block rounded-lg p-2 bg-white hover:bg-opacity-10 bg-opacity-0"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" fill="currentColor" viewBox="0 0 512 512">
+                      <path
+                        d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"
+                      />
+                    </svg>
                   </a>
                 </span>
               </span>
             </code>
           </div>
           <div class="text-gray-300">
-            <h2 class="text-3xl font-semibold pb-4 text-cyan-500 tracking-widest" style="font-family: Orbitron;">Overview</h2>
-            <div class="w-40 h-2 bg-cyan-500 mb-6" style="clip-path: polygon(5px 0px, 100% 0px, 100% 40%, calc(100% - 5px) 100%, 0px 100%, 0px 60%);"></div>
-            <p class="pb-4">8-weeks event where students contribute to open-source projects starting on 19 August. Where we will provide trainings on Git, how to collaborate on GitHub, finding a suitable open source project and contribute to them. Certificates will be awarded on completing the program. Enhance your skills and advance your career with this invaluable opportunity!</p>
-            <br class="my-10">
+            <h2 class="text-3xl font-semibold pb-4 text-cyan-500 tracking-widest" style="font-family: Orbitron">
+              Overview
+            </h2>
+            <div
+              class="w-40 h-2 bg-cyan-500 mb-6"
+              style="clip-path: polygon(5px 0px, 100% 0px, 100% 40%, calc(100% - 5px) 100%, 0px 100%, 0px 60%)"
+            ></div>
+            <p class="pb-4">
+              8-weeks event where students contribute to open-source projects starting on 19 August. Where we will
+              provide trainings on Git, how to collaborate on GitHub, finding a suitable open source project and
+              contribute to them. Certificates will be awarded on completing the program. Enhance your skills and
+              advance your career with this invaluable opportunity!
+            </p>
+            <br class="my-10" />
             <!--stats section-->
-          <div class="stats" >
-            <div style="font-family: Orbitron;" class="stats-text Current-status"><h1 class="text-cyan-500 text-3xl font-semibold mb-12 tracking-widest">Current Status</h1></div>
-            <div style="font-family: Orbitron;" class="text-gray-300 text-xl font-semibold tracking-widest stats-number">
-            <div class="row row1">
-              <div class="first total-prs">
-                <h2 id="total" class="text-3xl">fetching...</h2>
-                <h3 class="mb-12">Total PR merged</h3>
-              </div>
-              <div class="second merged-prs">
-                <h2 id="merge" class="text-3xl">fetching..</h2>
-                <h3 class="mb-12">Merged Prs</h3>
+            <h2 class="text-3xl font-semibold pb-4 text-cyan-500 tracking-widest" style="font-family: Orbitron">
+              Statistics
+            </h2>
+            <div
+              class="w-40 h-2 bg-cyan-500 mb-6"
+              style="clip-path: polygon(5px 0px, 100% 0px, 100% 40%, calc(100% - 5px) 100%, 0px 100%, 0px 60%)"
+            ></div>
+            <div class="stats">
+              <div style="font-family: Orbitron">
+                <div>
+                  <h2 id="total">0</h2>
+                  <h3>Total PRs Opened</h3>
+                </div>
+                <div>
+                  <h2 id="merge">0</h2>
+                  <h3>Merged Prs</h3>
+                </div>
+                <div>
+                  <h2 id="total-reg">0</h2>
+                  <h3>Total Registrations</h3>
+                </div>
+                <div>
+                  <h2 id="a-participants">0</h2>
+                  <h3>Active Participants</h3>
+                </div>
+                <div>
+                  <h2 id="completions">0</h2>
+                  <h3>Completions</h3>
+                </div>
               </div>
             </div>
-            <div class="row row2">
-              <div class="first total-reg">
-                <h2 id="total-reg" class="text-3xl">fetching...</h2>
-                <h3 class="mb-12">Total Registrations</h3>
-              </div>
-              <div class="second  active-participants">
-                <h2 id="a-participants" class="text-3xl">fetching...</h2>
-                <h3  class="mb-12" >Active Participants</h3>
-              </div>
-            </div>
-            <div class="row row3">
-              <div class="first successors">
-                <h2 id="completions" class="text-3xl">fetching...</h2>
-                <h3 >Completions</h3>
-              </div>
-            </div>
-           </div>
-           </div>
-            <br class="my-10">
-           <!--stats section ends here-->
-            <h2 class="text-3xl font-semibold pb-4 text-cyan-500 tracking-widest" style="font-family: Orbitron;">Timeline</h2>
-            <div class="w-40 h-2 bg-cyan-500 mb-6" style="clip-path: polygon(5px 0px, 100% 0px, 100% 40%, calc(100% - 5px) 100%, 0px 100%, 0px 60%);"></div>
+            <br class="my-10" />
+            <!--stats section ends here-->
+            <h2 class="text-3xl font-semibold pb-4 text-cyan-500 tracking-widest" style="font-family: Orbitron">
+              Timeline
+            </h2>
+            <div
+              class="w-40 h-2 bg-cyan-500 mb-6"
+              style="clip-path: polygon(5px 0px, 100% 0px, 100% 40%, calc(100% - 5px) 100%, 0px 100%, 0px 60%)"
+            ></div>
             <div class="pb-4">
               <div class="relative wrap overflow-hidden md:p-10 h-full">
                 <div class="absolute border-opacity-50 border-sky-500 h-full border" style="right: 50%"></div>
                 <div class="absolute border-opacity-50 border-sky-500 h-full border" style="left: 50%"></div>
                 <!-- right timeline -->
                 <div class="mb-8 flex justify-between items-start w-full right-timeline">
-                    <div class="order-1 w-5/12"></div>
-                    <div class="mt-5 z-20 flex items-center order-1 bg-sky-500 shadow-xl w-4 h-4 rounded-full"></div>
-                    <div class="order-1 w-5/12 mb:px-1 py-4 text-left">
-                        <p class="mb-3 text-base text-yellow-300"> 17 Aug, 2023</p>
-                        <h4 class="mb-3 font-bold text-base md:text-2xl">Registration Begins</h4>
-                        <p class="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
-                            The registration for the marathon will begin on 17 August, 2023.
-                        </p>
-                    </div>
-                </div>
-            
-                <!-- left timeline -->
-                <div class="mb-8 flex justify-between flex-row-reverse items-start w-full left-timeline">
-                    <div class="order-1 w-5/12"></div>
-                    <div class="mt-5 z-20 flex items-center order-1 bg-sky-500 shadow-xl w-4 h-4 rounded-full"></div>
-                    <div class="order-1 w-5/12 mb:px-1 py-4 text-right">
-                        <p class="mb-3 text-base text-yellow-300"> 19 Aug, 2023</p>
-                        <h4 class="mb-3 font-bold text-base md:text-2xl">Marathon Begins</h4>
-                        <p class="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
-                            The marathon begins and participants can start contributing to open-source projects.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- right timeline -->
-                <div class="mb-8 flex justify-between items-start w-full right-timeline">
-                    <div class="order-1 w-5/12"></div>
-                    <div class="mt-5 z-20 flex items-center order-1 bg-sky-500 shadow-xl w-4 h-4 rounded-full"></div>
-                    <div class="order-1 w-5/12 mb:px-1 py-4 text-left">
-                        <p class="mb-3 text-base text-yellow-300">Week 1</p>
-                        <h4 class="mb-3 font-bold text-base md:text-2xl">Primer on Open Source Tools</h4>
-                        <p class="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
-                            Techinical session on Git, GitHub, contribution workflows will be conducted.
-                        </p>
-                    </div>
+                  <div class="order-1 w-5/12"></div>
+                  <div class="mt-5 z-20 flex items-center order-1 bg-sky-500 shadow-xl w-4 h-4 rounded-full"></div>
+                  <div class="order-1 w-5/12 mb:px-1 py-4 text-left">
+                    <p class="mb-3 text-base text-yellow-300">17 Aug, 2023</p>
+                    <h4 class="mb-3 font-bold text-base md:text-2xl">Registration Begins</h4>
+                    <p class="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
+                      The registration for the marathon will begin on 17 August, 2023.
+                    </p>
+                  </div>
                 </div>
 
                 <!-- left timeline -->
                 <div class="mb-8 flex justify-between flex-row-reverse items-start w-full left-timeline">
-                    <div class="order-1 w-5/12"></div>
-                    <div class="mt-5 z-20 flex items-center order-1 bg-sky-500 shadow-xl w-4 h-4 rounded-full"></div>
-                    <div class="order-1 w-5/12 mb:px-1 py-4 text-right">
-                        <p class="mb-3 text-base text-yellow-300">Week 2</p>
-                        <h4 class="mb-3 font-bold text-base md:text-2xl">Preparation & Project Selection</h4>
-                        <p class="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
-                            Participants will be guided to find a open-source projects selection, how to find good first issues.
-                        </p>
-                    </div>
+                  <div class="order-1 w-5/12"></div>
+                  <div class="mt-5 z-20 flex items-center order-1 bg-sky-500 shadow-xl w-4 h-4 rounded-full"></div>
+                  <div class="order-1 w-5/12 mb:px-1 py-4 text-right">
+                    <p class="mb-3 text-base text-yellow-300">19 Aug, 2023</p>
+                    <h4 class="mb-3 font-bold text-base md:text-2xl">Marathon Begins</h4>
+                    <p class="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
+                      The marathon begins and participants can start contributing to open-source projects.
+                    </p>
+                  </div>
                 </div>
 
                 <!-- right timeline -->
                 <div class="mb-8 flex justify-between items-start w-full right-timeline">
-                    <div class="order-1 w-5/12"></div>
-                    <div class="mt-5 z-20 flex items-center order-1 bg-sky-500 shadow-xl w-4 h-4 rounded-full"></div>
-                    <div class="order-1 w-5/12 mb:px-1 py-4 text-left">
-                        <p class="mb-3 text-base text-yellow-300">Week 3 - 8</p>
-                        <h4 class="mb-3 font-bold text-base md:text-2xl">Open Source Contributions</h4>
-                        <p class="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
-                            Students will be contributing to open-source projects and will be guided by mentors.
-                            Technical sessions will be conducted and queries will be answered.
-                        </p>
-                    </div>
+                  <div class="order-1 w-5/12"></div>
+                  <div class="mt-5 z-20 flex items-center order-1 bg-sky-500 shadow-xl w-4 h-4 rounded-full"></div>
+                  <div class="order-1 w-5/12 mb:px-1 py-4 text-left">
+                    <p class="mb-3 text-base text-yellow-300">Week 1</p>
+                    <h4 class="mb-3 font-bold text-base md:text-2xl">Primer on Open Source Tools</h4>
+                    <p class="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
+                      Techinical session on Git, GitHub, contribution workflows will be conducted.
+                    </p>
+                  </div>
                 </div>
 
                 <!-- left timeline -->
                 <div class="mb-8 flex justify-between flex-row-reverse items-start w-full left-timeline">
-                    <div class="order-1 w-5/12"></div>
-                    <div class="mt-5 z-20 flex items-center order-1 bg-sky-500 shadow-xl w-4 h-4 rounded-full"></div>
-                    <div class="order-1 w-5/12 mb:px-1 py-4 text-right">
-                        <p class="mb-3 text-base text-yellow-300">15 Oct, 2023</p>
-                        <h4 class="mb-3 font-bold text-base md:text-2xl">Program Ends</h4>
-                        <p class="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
-                            The marathon ends.
-                        </p>
-                    </div>
+                  <div class="order-1 w-5/12"></div>
+                  <div class="mt-5 z-20 flex items-center order-1 bg-sky-500 shadow-xl w-4 h-4 rounded-full"></div>
+                  <div class="order-1 w-5/12 mb:px-1 py-4 text-right">
+                    <p class="mb-3 text-base text-yellow-300">Week 2</p>
+                    <h4 class="mb-3 font-bold text-base md:text-2xl">Preparation & Project Selection</h4>
+                    <p class="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
+                      Participants will be guided to find a open-source projects selection, how to find good first
+                      issues.
+                    </p>
+                  </div>
                 </div>
 
                 <!-- right timeline -->
                 <div class="mb-8 flex justify-between items-start w-full right-timeline">
-                    <div class="order-1 w-5/12"></div>
-                    <div class="mt-5 z-20 flex items-center order-1 bg-sky-500 shadow-xl w-4 h-4 rounded-full"></div>
-                    <div class="order-1 w-5/12 mb:px-1 py-4 text-left">
-                        <p class="mb-3 text-base text-yellow-300"> TBD</p>
-                        <h4 class="mb-3 font-bold md:text-2xl">Concluding session and felicitation ceremony</h4>
-                        <p class="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
-                            Results will be announced, certificates will be awarded and Prizes may get distributed.
-                        </p>
-                    </div>
+                  <div class="order-1 w-5/12"></div>
+                  <div class="mt-5 z-20 flex items-center order-1 bg-sky-500 shadow-xl w-4 h-4 rounded-full"></div>
+                  <div class="order-1 w-5/12 mb:px-1 py-4 text-left">
+                    <p class="mb-3 text-base text-yellow-300">Week 3 - 8</p>
+                    <h4 class="mb-3 font-bold text-base md:text-2xl">Open Source Contributions</h4>
+                    <p class="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
+                      Students will be contributing to open-source projects and will be guided by mentors. Technical
+                      sessions will be conducted and queries will be answered.
+                    </p>
+                  </div>
                 </div>
-              </div>    
+
+                <!-- left timeline -->
+                <div class="mb-8 flex justify-between flex-row-reverse items-start w-full left-timeline">
+                  <div class="order-1 w-5/12"></div>
+                  <div class="mt-5 z-20 flex items-center order-1 bg-sky-500 shadow-xl w-4 h-4 rounded-full"></div>
+                  <div class="order-1 w-5/12 mb:px-1 py-4 text-right">
+                    <p class="mb-3 text-base text-yellow-300">15 Oct, 2023</p>
+                    <h4 class="mb-3 font-bold text-base md:text-2xl">Program Ends</h4>
+                    <p class="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">The marathon ends.</p>
+                  </div>
+                </div>
+
+                <!-- right timeline -->
+                <div class="mb-8 flex justify-between items-start w-full right-timeline">
+                  <div class="order-1 w-5/12"></div>
+                  <div class="mt-5 z-20 flex items-center order-1 bg-sky-500 shadow-xl w-4 h-4 rounded-full"></div>
+                  <div class="order-1 w-5/12 mb:px-1 py-4 text-left">
+                    <p class="mb-3 text-base text-yellow-300">TBD</p>
+                    <h4 class="mb-3 font-bold md:text-2xl">Concluding session and felicitation ceremony</h4>
+                    <p class="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
+                      Results will be announced, certificates will be awarded and Prizes may get distributed.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
-           
-            <br class="my-10">
-            <h2 class="text-3xl font-semibold pb-4 text-cyan-500 tracking-widest" style="font-family: Orbitron;">Who should apply?</h2>
-            <div class="w-40 h-2 bg-cyan-500 mb-6" style="clip-path: polygon(5px 0px, 100% 0px, 100% 40%, calc(100% - 5px) 100%, 0px 100%, 0px 60%);"></div>
-            <p class="pb-4">The marathon welcomes participants of varying skill levels and backgrounds. Enthusiastic students and learners passionate about open-source, wants to work on real world projects and make a career in tech.<p>
-            <p class="pb-4">Students looking to expand their network and join open source community or projects.<p>
-            <br class="my-10">
-            <h2 class="text-3xl font-semibold pb-4 text-cyan-500 tracking-widest" style="font-family: Orbitron;">What you will gain?</h2>
-            <div class="w-40 h-2 bg-cyan-500 mb-6" style="clip-path: polygon(5px 0px, 100% 0px, 100% 40%, calc(100% - 5px) 100%, 0px 100%, 0px 60%);"></div>
+
+            <br class="my-10" />
+            <h2 class="text-3xl font-semibold pb-4 text-cyan-500 tracking-widest" style="font-family: Orbitron">
+              Who should apply?
+            </h2>
+            <div
+              class="w-40 h-2 bg-cyan-500 mb-6"
+              style="clip-path: polygon(5px 0px, 100% 0px, 100% 40%, calc(100% - 5px) 100%, 0px 100%, 0px 60%)"
+            ></div>
+            <p class="pb-4">
+              The marathon welcomes participants of varying skill levels and backgrounds. Enthusiastic students and
+              learners passionate about open-source, wants to work on real world projects and make a career in tech.
+            </p>
+            <p></p>
+            <p class="pb-4">Students looking to expand their network and join open source community or projects.</p>
+            <p>
+              <br class="my-10" />
+            </p>
+
+            <h2 class="text-3xl font-semibold pb-4 text-cyan-500 tracking-widest" style="font-family: Orbitron">
+              What you will gain?
+            </h2>
+            <div
+              class="w-40 h-2 bg-cyan-500 mb-6"
+              style="clip-path: polygon(5px 0px, 100% 0px, 100% 40%, calc(100% - 5px) 100%, 0px 100%, 0px 60%)"
+            ></div>
             <ol class="pb-4 pl-8 list-decimal">
-                <li>Learn valuable coding and collaboration skills.</li>
-                <li>Be part of a community that values diversity, creativity, and innovation.</li>
-                <li>Build a strong portfolio showcasing open source contributions.</li>
-                <li>Foster networking and personal growth while making a meaningful impact.</li>
+              <li>Learn valuable coding and collaboration skills.</li>
+              <li>Be part of a community that values diversity, creativity, and innovation.</li>
+              <li>Build a strong portfolio showcasing open source contributions.</li>
+              <li>Foster networking and personal growth while making a meaningful impact.</li>
             </ol>
           </div>
-        <div class="m-2 mb-16">
-          <div class="mb-2 flex gap-1 h-1 w-1/5">
-            <div class="h-full w-1/4 bg-white"></div>
-            <div class="h-full w-1/4 bg-white"></div>
-            <div class="h-full w-2/4 bg-white"></div>
+          <div class="m-2 mb-16">
+            <div class="mb-2 flex gap-1 h-1 w-1/5">
+              <div class="h-full w-1/4 bg-white"></div>
+              <div class="h-full w-1/4 bg-white"></div>
+              <div class="h-full w-2/4 bg-white"></div>
+            </div>
+            <hr class="border-cyan-500" />
           </div>
-          <hr class="border-cyan-500">  
-        </div>
-        <div class="text-gray-300">
-          <h1 class="text-4xl font-semibold pb-4 text-cyan-500 tracking-widest" style="font-family: Orbitron;">Participation</h1>
-          <div class="w-40 h-2 bg-cyan-500 mb-6" style="clip-path: polygon(5px 0px, 100% 0px, 100% 40%, calc(100% - 5px) 100%, 0px 100%, 0px 60%);"></div>
-          <p class="pb-4">Participating in this marathon leads to personal growth, professional opportunities, and community building. But it all begins with meaningful contributions to open-source software.</p>
-          <br class="my-10">
-          <h2 class="text-3xl font-semibold pb-6 text-cyan-500 tracking-widest" style="font-family: Orbitron;">Contributors</h2>
-          <p class="pb-4 text-xl font-semibold">Here's what you need to know to participate and complete this marathon</p>
-          <ul class="pb-4 dashed normal-case text-gray-400">
-            <li class="list-item">Register anytime between this program timeline, 19 August - 15 October</li>
-            <li class="list-item">Pull request can be made in any <a class="text-cyan-500 uppercase font-semibold hover:text-cyan-400" href="https://github.com">GitHub</a> hosted open source project</li>
-            <li class="list-item">Project maintainers must accept your pull/merge requests for them to count toward your total</li>
-            <li class="list-item">Have 3 pull/merge requests accepted between program timeline to complete this event</li>
-          </ul>
-          <br class="my-10">
-          <h2 class="text-3xl font-semibold pb-6 text-cyan-500 tracking-widest" style="font-family: Orbitron;">Resources</h2>
-          <p class="pb-4 text-xl font-semibold">Intro to open source</p>
-          <ul class="pb-8 dashed normal-case text-gray-400">
-            <li><a class="text-cyan-500 uppercase font-semibold hover:text-cyan-400" href="https://opensource.guide/how-to-contribute/">How to contribute to open source</a></li>
-            <li><a class="text-cyan-500 uppercase font-semibold hover:text-cyan-400" href="https://training.github.com">GitHub training kit</a></li>
-            <li><a class="text-cyan-500 uppercase font-semibold hover:text-cyan-400" href="https://guides.github.com/introduction/flow/">Understanding the GitHub Flow</a></li>
-            <li><a class="text-cyan-500 uppercase font-semibold hover:text-cyan-400" href="https://opensource.com/article/19/5/how-get-job-doing-open-source">How open source contributions can boost your career</a></li>
-          </ul>
-          <p class="pb-4 text-xl font-semibold">Start contributing</p>
-          <ul class="pb-8 dashed normal-case text-gray-400">
-            <li>Find Good First Issue: <a class="text-cyan-500 uppercase font-semibold hover:text-cyan-400" href="https://github.com/search?q=label%3A%22good%20first%20issue%22%20is%3Aopen&type=issues">label:"good first issue" is:open</a></li>
-            <li>Explore projects with issues: <a class="text-cyan-500 uppercase font-semibold hover:text-cyan-400" href="https://up-for-grabs.net/#/">up-for-grabs.net</a></li>
-            <li>Explore projects with issues: <a class="text-cyan-500 uppercase font-semibold hover:text-cyan-400" href="https://firstissue.dev/">firstissue.dev</a></li>
-            <li>GitHub Repository: <a class="text-cyan-500 uppercase font-semibold hover:text-cyan-400" href="https://github.com/firstcontributions/first-contributions">First-Contributions</a></li>
-            <li>GitHub Repository: <a class="text-cyan-500 uppercase font-semibold hover:text-cyan-400" href="https://github.com/mungell/awesome-for-beginners">Awesome-for-Beginners</a></li>
-          </ul>
-        </div>
-        <div class="m-2 mb-16">
-          <div class="mb-2 flex gap-1 h-1 w-1/5">
-            <div class="h-full w-1/4 bg-white"></div>
-            <div class="h-full w-1/4 bg-white"></div>
-            <div class="h-full w-2/4 bg-white"></div>
+          <div class="text-gray-300">
+            <h1 class="text-4xl font-semibold pb-4 text-cyan-500 tracking-widest" style="font-family: Orbitron">
+              Participation
+            </h1>
+            <div
+              class="w-40 h-2 bg-cyan-500 mb-6"
+              style="clip-path: polygon(5px 0px, 100% 0px, 100% 40%, calc(100% - 5px) 100%, 0px 100%, 0px 60%)"
+            ></div>
+            <p class="pb-4">
+              Participating in this marathon leads to personal growth, professional opportunities, and community
+              building. But it all begins with meaningful contributions to open-source software.
+            </p>
+            <br class="my-10" />
+            <h2 class="text-3xl font-semibold pb-6 text-cyan-500 tracking-widest" style="font-family: Orbitron">
+              Contributors
+            </h2>
+            <p class="pb-4 text-xl font-semibold">
+              Here's what you need to know to participate and complete this marathon
+            </p>
+            <ul class="pb-4 dashed normal-case text-gray-400">
+              <li class="list-item">Register anytime between this program timeline, 19 August - 15 October</li>
+              <li class="list-item">
+                Pull request can be made in any
+                <a class="text-cyan-500 uppercase font-semibold hover:text-cyan-400" href="https://github.com"
+                  >GitHub</a
+                >
+                hosted open source project
+              </li>
+              <li class="list-item">
+                Project maintainers must accept your pull/merge requests for them to count toward your total
+              </li>
+              <li class="list-item">
+                Have 3 pull/merge requests accepted between program timeline to complete this event
+              </li>
+            </ul>
+            <br class="my-10" />
+            <h2 class="text-3xl font-semibold pb-6 text-cyan-500 tracking-widest" style="font-family: Orbitron">
+              Resources
+            </h2>
+            <p class="pb-4 text-xl font-semibold">Intro to open source</p>
+            <ul class="pb-8 dashed normal-case text-gray-400">
+              <li>
+                <a
+                  class="text-cyan-500 uppercase font-semibold hover:text-cyan-400"
+                  href="https://opensource.guide/how-to-contribute/"
+                  >How to contribute to open source</a
+                >
+              </li>
+              <li>
+                <a class="text-cyan-500 uppercase font-semibold hover:text-cyan-400" href="https://training.github.com"
+                  >GitHub training kit</a
+                >
+              </li>
+              <li>
+                <a
+                  class="text-cyan-500 uppercase font-semibold hover:text-cyan-400"
+                  href="https://guides.github.com/introduction/flow/"
+                  >Understanding the GitHub Flow</a
+                >
+              </li>
+              <li>
+                <a
+                  class="text-cyan-500 uppercase font-semibold hover:text-cyan-400"
+                  href="https://opensource.com/article/19/5/how-get-job-doing-open-source"
+                  >How open source contributions can boost your career</a
+                >
+              </li>
+            </ul>
+            <p class="pb-4 text-xl font-semibold">Start contributing</p>
+            <ul class="pb-8 dashed normal-case text-gray-400">
+              <li>
+                Find Good First Issue:
+                <a
+                  class="text-cyan-500 uppercase font-semibold hover:text-cyan-400"
+                  href="https://github.com/search?q=label%3A%22good%20first%20issue%22%20is%3Aopen&type=issues"
+                  >label:"good first issue" is:open</a
+                >
+              </li>
+              <li>
+                Explore projects with issues:
+                <a class="text-cyan-500 uppercase font-semibold hover:text-cyan-400" href="https://up-for-grabs.net/#/"
+                  >up-for-grabs.net</a
+                >
+              </li>
+              <li>
+                Explore projects with issues:
+                <a class="text-cyan-500 uppercase font-semibold hover:text-cyan-400" href="https://firstissue.dev/"
+                  >firstissue.dev</a
+                >
+              </li>
+              <li>
+                GitHub Repository:
+                <a
+                  class="text-cyan-500 uppercase font-semibold hover:text-cyan-400"
+                  href="https://github.com/firstcontributions/first-contributions"
+                  >First-Contributions</a
+                >
+              </li>
+              <li>
+                GitHub Repository:
+                <a
+                  class="text-cyan-500 uppercase font-semibold hover:text-cyan-400"
+                  href="https://github.com/mungell/awesome-for-beginners"
+                  >Awesome-for-Beginners</a
+                >
+              </li>
+            </ul>
           </div>
-          <hr class="border-cyan-500">  
-        </div>
-        <div class="text-gray-400 md:text-center">
-          <h2 class="text-3xl font-semibold pb-6 text-cyan-500 tracking-widest" style="font-family: Orbitron;">FAQ</h2>
-          <p class="pb-4 text-xl font-semibold">Frequently asked questions</p>
+          <div class="m-2 mb-16">
+            <div class="mb-2 flex gap-1 h-1 w-1/5">
+              <div class="h-full w-1/4 bg-white"></div>
+              <div class="h-full w-1/4 bg-white"></div>
+              <div class="h-full w-2/4 bg-white"></div>
+            </div>
+            <hr class="border-cyan-500" />
+          </div>
+          <div class="text-gray-400 md:text-center">
+            <h2 class="text-3xl font-semibold pb-6 text-cyan-500 tracking-widest" style="font-family: Orbitron">FAQ</h2>
+            <p class="pb-4 text-xl font-semibold">Frequently asked questions</p>
 
-          <div class="mx-auto md:w-[600px] lg:w-[1000px] text-start">
-            <div>
-              <div class="accordion-header cursor-pointer transition flex space-x-5 items-start h-full">
-                [<span class="fas">&#43;</span>]
-                <h2 class="hover:text-gray-300 font-semibold">We have exams in mid of the program can we participate after exams?</h2>
-              </div>
-              <div class="accordion-content px-5 pt-0 overflow-hidden max-h-0 space-y-4 mr-4 text-sm">
-                <div class="flex flex-row ml-8 py-4">
-                  <div class="flex w-1 bg-gradient-to-t from-sky-600 to-sky-500"></div>
-                  <div class="flex-1 p-3">
-                    <p class="pl-2 sm:pl-4 md:text-justify normal-case">
-                      Yes, you can register anytime between the program timeline and start contributing.
-                    </p>
+            <div class="mx-auto md:w-[600px] lg:w-[1000px] text-start">
+              <div>
+                <div class="accordion-header cursor-pointer transition flex space-x-5 items-start h-full">
+                  [<span class="fas">&#43;</span>]
+                  <h2 class="hover:text-gray-300 font-semibold">
+                    We have exams in mid of the program can we participate after exams?
+                  </h2>
+                </div>
+                <div class="accordion-content px-5 pt-0 overflow-hidden max-h-0 space-y-4 mr-4 text-sm">
+                  <div class="flex flex-row ml-8 py-4">
+                    <div class="flex w-1 bg-gradient-to-t from-sky-600 to-sky-500"></div>
+                    <div class="flex-1 p-3">
+                      <p class="pl-2 sm:pl-4 md:text-justify normal-case">
+                        Yes, you can register anytime between the program timeline and start contributing.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div>
-              <div class="accordion-header cursor-pointer transition flex space-x-5 items-start h-full">
-                [<span class="fas">&#43;</span>]
-                <h2 class="hover:text-gray-300 font-semibold">What is this workshop about?</h2>
-              </div>
-              <div class="accordion-content px-5 pt-0 overflow-hidden max-h-0 space-y-4 mr-4 text-sm">
-                <div class="flex flex-row ml-8 py-4">
-                  <div class="flex w-1 bg-gradient-to-t from-sky-600 to-sky-500"></div>
-                  <div class="flex-1 p-3">
-                    <p class="pl-2 sm:pl-4 md:text-justify normal-case">
-                      This is not a workshop but a 8 weeks long event where you have to contribute to open-source projects. We will teach you how to contribute, and you will have to choose projects and contribute to them.
-                    </p>
+              <div>
+                <div class="accordion-header cursor-pointer transition flex space-x-5 items-start h-full">
+                  [<span class="fas">&#43;</span>]
+                  <h2 class="hover:text-gray-300 font-semibold">What is this workshop about?</h2>
+                </div>
+                <div class="accordion-content px-5 pt-0 overflow-hidden max-h-0 space-y-4 mr-4 text-sm">
+                  <div class="flex flex-row ml-8 py-4">
+                    <div class="flex w-1 bg-gradient-to-t from-sky-600 to-sky-500"></div>
+                    <div class="flex-1 p-3">
+                      <p class="pl-2 sm:pl-4 md:text-justify normal-case">
+                        This is not a workshop but a 8 weeks long event where you have to contribute to open-source
+                        projects. We will teach you how to contribute, and you will have to choose projects and
+                        contribute to them.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div>
-              <div class="accordion-header cursor-pointer transition flex space-x-5 items-start h-full">
-                [<span class="fas">&#43;</span>]
-                <h2 class="hover:text-gray-300 font-semibold">What are the training topic and timings?</h2>
-              </div>
-              <div class="accordion-content px-5 pt-0 overflow-hidden max-h-0 space-y-4 mr-4 text-sm">
-                <div class="flex flex-row ml-8 py-4">
-                  <div class="flex w-1 bg-gradient-to-t from-sky-600 to-sky-500"></div>
-                  <div class="flex-1 p-3">
-                    <p class="pl-2 sm:pl-4 md:text-justify normal-case">
-                      We will provide taining on topics like Git, GitHub, contribution workflows, etc. We will publish the training schedule soon.
-                    </p>
+              <div>
+                <div class="accordion-header cursor-pointer transition flex space-x-5 items-start h-full">
+                  [<span class="fas">&#43;</span>]
+                  <h2 class="hover:text-gray-300 font-semibold">What are the training topic and timings?</h2>
+                </div>
+                <div class="accordion-content px-5 pt-0 overflow-hidden max-h-0 space-y-4 mr-4 text-sm">
+                  <div class="flex flex-row ml-8 py-4">
+                    <div class="flex w-1 bg-gradient-to-t from-sky-600 to-sky-500"></div>
+                    <div class="flex-1 p-3">
+                      <p class="pl-2 sm:pl-4 md:text-justify normal-case">
+                        We will provide taining on topics like Git, GitHub, contribution workflows, etc. We will publish
+                        the training schedule soon.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div>
-              <div class="accordion-header cursor-pointer transition flex space-x-5 items-start h-full">
-                [<span class="fas">&#43;</span>]
-                <h2 class="hover:text-gray-300 font-semibold">I don't have much programming knowledge, can I participate in this event?</h2>
-              </div>
-              <div class="accordion-content px-5 pt-0 overflow-hidden max-h-0 space-y-4 mr-4 text-sm">
-                <div class="flex flex-row ml-8 py-4">
-                  <div class="flex w-1 bg-gradient-to-t from-sky-600 to-sky-500"></div>
-                  <div class="flex-1 p-3">
-                    <p class="pl-2 sm:pl-4 md:text-justify normal-case">
-                      Open-source contribution is not only about code contributions, you still have lots of ways to contribute to open-source projects. You can contribute to documentation, translation, design, etc. So, yes you can participate in this event.
-                    </p>  
+              <div>
+                <div class="accordion-header cursor-pointer transition flex space-x-5 items-start h-full">
+                  [<span class="fas">&#43;</span>]
+                  <h2 class="hover:text-gray-300 font-semibold">
+                    I don't have much programming knowledge, can I participate in this event?
+                  </h2>
+                </div>
+                <div class="accordion-content px-5 pt-0 overflow-hidden max-h-0 space-y-4 mr-4 text-sm">
+                  <div class="flex flex-row ml-8 py-4">
+                    <div class="flex w-1 bg-gradient-to-t from-sky-600 to-sky-500"></div>
+                    <div class="flex-1 p-3">
+                      <p class="pl-2 sm:pl-4 md:text-justify normal-case">
+                        Open-source contribution is not only about code contributions, you still have lots of ways to
+                        contribute to open-source projects. You can contribute to documentation, translation, design,
+                        etc. So, yes you can participate in this event.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -546,9 +709,9 @@
 
     <script type="module" src="/assets/js/main.js"></script>
     <script>
-      [].forEach.call(document.querySelectorAll('img'), function(img) {
-        img.onload = function() {
-          img.classList.add('loaded');
+      [].forEach.call(document.querySelectorAll("img"), function (img) {
+        img.onload = function () {
+          img.classList.add("loaded");
         };
       });
       const accordionHeader = document.querySelectorAll(".accordion-header");
@@ -568,9 +731,8 @@
       });
     </script>
 
-    
     <script>
-      //script for stas API 
+      //script for stas API
 
       let total = document.getElementById("total");
       let merge = document.getElementById("merge");
@@ -578,33 +740,25 @@
       let a_participants = document.getElementById("a-participants");
       let completions = document.getElementById("completions");
 
-
-      const statsUrl = "https://raw.githubusercontent.com/devs2gather/marathon/main/leaderboard/stats.json"
+      const statsUrl = "https://raw.githubusercontent.com/devs2gather/marathon/main/leaderboard/stats.json";
       fetch(statsUrl)
-  .then(response => {
-    
-    if (!response.ok) {
-      throw new Error("Failed to fetch data from the API.");
-    }
-    
-    return response.json();
-  })
-  .then(data => {
-    
-    
-    total.innerHTML = data.total;
-    merge.innerHTML = data.merged;
-    completions.innerHTML = data.completed;
-    total_reg.innerHTML = "110+";
-    a_participants.innerHTML = data.users;
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Failed to fetch data from the API.");
+          }
 
-  })
-  .catch(error => {
-    console.error(error);
-  });
-
-
+          return response.json();
+        })
+        .then((data) => {
+          total.innerHTML = data.total;
+          merge.innerHTML = data.merged;
+          completions.innerHTML = data.completed;
+          total_reg.innerHTML = "110+";
+          a_participants.innerHTML = data.users;
+        })
+        .catch((error) => {
+          console.error(error);
+        });
     </script>
-    
   </body>
 </html>
