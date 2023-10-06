@@ -1,0 +1,5 @@
+.github
+package*.json
+*.min.css
+*.min.js
+*.md
